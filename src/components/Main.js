@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Main = () => {
   const [area, setArea] = useState(null);
   return (
-    <div>
+    <div className="columns">
       <JapanMap currentArea={area} />
       {/* <MainView /> */}
       <OverallGraph effect={setArea} />

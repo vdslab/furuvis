@@ -72,120 +72,122 @@ const OverallGraph = ({ effect }) => {
     .domain([0, d3.extent(detailData, (item) => item["price"])[1]])
     .range([contentHeight, 0]);
   return (
-    <div>
-      <svg
-        viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
-        width={svgWidth}
-        height={svgHeight}
-        style={{ border: "1px solid black" }}
-      >
-        {displayYear === null && graphType && (
-          <HorizontalAxis
-            scale={xScaleYear}
-            graphWidth={contentWidth}
-            graphHeight={contentHeight}
-            label="年"
-          />
-        )}
-        {displayYear === null && graphType && (
-          <VerricalAxis
-            scale={graphType === "price" ? yScalePrice : yScalePopulation}
-            graphHeight={contentHeight}
-            label={graphType === "price" ? "受け入れ額" : "人口"}
-          />
-        )}
-        {displayYear === null && graphType === "price" && (
-          <g>
-            {price.map((item, i) => {
-              const preData = i > 0 ? price[i - 1] : null;
-              if (i > 0) {
+    <div className="column is-5">
+      <div className="box">
+        <svg
+          viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
+          width={svgWidth}
+          height={svgHeight}
+          // style={{ border: "1px solid black" }}
+        >
+          {displayYear === null && graphType && (
+            <HorizontalAxis
+              scale={xScaleYear}
+              graphWidth={contentWidth}
+              graphHeight={contentHeight}
+              label="年"
+            />
+          )}
+          {displayYear === null && graphType && (
+            <VerricalAxis
+              scale={graphType === "price" ? yScalePrice : yScalePopulation}
+              graphHeight={contentHeight}
+              label={graphType === "price" ? "受け入れ額" : "人口"}
+            />
+          )}
+          {displayYear === null && graphType === "price" && (
+            <g>
+              {price.map((item, i) => {
+                const preData = i > 0 ? price[i - 1] : null;
+                if (i > 0) {
+                  return (
+                    <line
+                      key={item.id}
+                      x1={xScaleYear(preData["year"])}
+                      y1={yScalePrice(preData.price)}
+                      x2={xScaleYear(item["year"])}
+                      y2={yScalePrice(item.price)}
+                      stroke="black"
+                    ></line>
+                  );
+                }
+              })}
+            </g>
+          )}
+          {displayYear === null && graphType === "population" && (
+            <g>
+              {population.map((item, i) => {
+                const preData = i > 0 ? population[i - 1] : null;
+                if (i > 0) {
+                  return (
+                    <line
+                      key={item.id}
+                      x1={xScaleYear(preData["year"])}
+                      y1={yScalePopulation(preData.population)}
+                      x2={xScaleYear(item["year"])}
+                      y2={yScalePopulation(item.population)}
+                      stroke="black"
+                    ></line>
+                  );
+                }
+              })}
+            </g>
+          )}
+          {displayYear === 2019 && detailData.length > 0 && (
+            <VerricalAxis
+              scale={yScale2019Price}
+              graphHeight={contentHeight}
+              label="受け入れ金額"
+            />
+          )}
+          {displayYear === 2019 && detailData.length > 0 && (
+            <HorizontalAxis
+              scale={xScaleAreaName}
+              graphWidth={contentWidth}
+              graphHeight={contentHeight}
+              label="市区町村（順位）"
+            />
+          )}
+          {displayYear === 2019 && detailData.length > 0 && (
+            <g>
+              {detailData.map((item, i) => {
+                const preData = i > 0 ? detailData[i - 1] : null;
+                if (i > 0) {
+                  return (
+                    <line
+                      key={item.id}
+                      x1={xScaleAreaName(preData["rank"])}
+                      y1={yScale2019Price(preData.price)}
+                      x2={xScaleAreaName(item["rank"])}
+                      y2={yScale2019Price(item.price)}
+                      stroke="black"
+                    ></line>
+                  );
+                }
+              })}
+            </g>
+          )}
+          )
+        </svg>
+        <div>
+          {displayYear === 2019 && detailData.length > 0 && (
+            <ul>
+              {detailData.map((item, i) => {
                 return (
-                  <line
-                    key={item.id}
-                    x1={xScaleYear(preData["year"])}
-                    y1={yScalePrice(preData.price)}
-                    x2={xScaleYear(item["year"])}
-                    y2={yScalePrice(item.price)}
-                    stroke="black"
-                  ></line>
+                  <li key={i} data-id={item.id} onClick={mouseEnterAreaHandler}>
+                    {item.name}
+                  </li>
                 );
-              }
-            })}
-          </g>
-        )}
-        {displayYear === null && graphType === "population" && (
-          <g>
-            {population.map((item, i) => {
-              const preData = i > 0 ? population[i - 1] : null;
-              if (i > 0) {
-                return (
-                  <line
-                    key={item.id}
-                    x1={xScaleYear(preData["year"])}
-                    y1={yScalePopulation(preData.population)}
-                    x2={xScaleYear(item["year"])}
-                    y2={yScalePopulation(item.population)}
-                    stroke="black"
-                  ></line>
-                );
-              }
-            })}
-          </g>
-        )}
-        {displayYear === 2019 && detailData.length > 0 && (
-          <VerricalAxis
-            scale={yScale2019Price}
-            graphHeight={contentHeight}
-            label="受け入れ金額"
-          />
-        )}
-        {displayYear === 2019 && detailData.length > 0 && (
-          <HorizontalAxis
-            scale={xScaleAreaName}
-            graphWidth={contentWidth}
-            graphHeight={contentHeight}
-            label="市区町村（順位）"
-          />
-        )}
-        {displayYear === 2019 && detailData.length > 0 && (
-          <g>
-            {detailData.map((item, i) => {
-              const preData = i > 0 ? detailData[i - 1] : null;
-              if (i > 0) {
-                return (
-                  <line
-                    key={item.id}
-                    x1={xScaleAreaName(preData["rank"])}
-                    y1={yScale2019Price(preData.price)}
-                    x2={xScaleAreaName(item["rank"])}
-                    y2={yScale2019Price(item.price)}
-                    stroke="black"
-                  ></line>
-                );
-              }
-            })}
-          </g>
-        )}
-        )
-      </svg>
-      <div>
-        {displayYear === 2019 && detailData.length > 0 && (
-          <ul>
-            {detailData.map((item, i) => {
-              return (
-                <li key={i} data-id={item.id} onClick={mouseEnterAreaHandler}>
-                  {item.name}
-                </li>
-              );
-            })}
-          </ul>
-        )}
-        <span>特徴を選択</span>
-        <button onClick={mouseEnterTypeHandler}>人口</button>)
-      </div>
-      <div>
-        <span>年度を選択</span>
-        <button onClick={mouseEnterYearHandler}>2019</button>
+              })}
+            </ul>
+          )}
+          <span>特徴を選択</span>
+          <button onClick={mouseEnterTypeHandler}>人口</button>)
+        </div>
+        <div>
+          <span>年度を選択</span>
+          <button onClick={mouseEnterYearHandler}>2019</button>
+        </div>
       </div>
     </div>
   );

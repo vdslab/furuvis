@@ -46,33 +46,41 @@ const JapanMap = ({ currentArea }) => {
     setArea(currentArea);
   }, [currentArea]);
   if (!japanPath.length) {
-    return <p>loading</p>;
+    return (
+      <div className="box">
+        <p>loading</p>
+      </div>
+    );
   }
   return (
-    <svg
-      viewBox="-50 0 770 325"
-      style={{ border: "1px solid black" }}
-      width="500"
-      height="550"
-    >
-      <g>
-        {japanPath.map((item, i) => (
-          <path
-            key={i}
-            d={item.path}
-            stroke="black"
-            strokeWidth="0.4"
-            strokeOpacity="0.5"
-            style={{
-              fill:
-                area >= item.area_code && area < item.area_code + 20
-                  ? "red"
-                  : "white",
-            }}
-          />
-        ))}
-      </g>
-    </svg>
+    <div className="column is-5">
+      <div className="box">
+        <svg
+          viewBox="-50 0 770 325"
+          // style={{ border: "1px solid black" }}
+          width="500"
+          height="550"
+        >
+          <g>
+            {japanPath.map((item, i) => (
+              <path
+                key={i}
+                d={item.path}
+                stroke="black"
+                strokeWidth="0.4"
+                strokeOpacity="0.5"
+                style={{
+                  fill:
+                    area >= item.area_code && area < item.area_code + 20
+                      ? "red"
+                      : "white",
+                }}
+              />
+            ))}
+          </g>
+        </svg>
+      </div>
+    </div>
   );
 };
 export default JapanMap;
