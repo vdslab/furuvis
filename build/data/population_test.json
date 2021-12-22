@@ -1,0 +1,67 @@
+[
+    {
+        "id": 3,
+        "year": 2008,
+        "population": 594420.4
+    },
+    {
+        "id": 4,
+        "year": 2009,
+        "population": 737712.05
+    },
+    {
+        "id": 5,
+        "year": 2010,
+        "population": 650742.8
+    },
+    {
+        "id": 6,
+        "year": 2011,
+        "population": 663042.55
+    },
+    {
+        "id": 7,
+        "year": 2012,
+        "population": 632479.75
+    },
+    {
+        "id": 8,
+        "year":  2013,
+        "population": 429556.7
+    },
+    {
+        "id": 9,
+        "year": 2014,
+        "population": 144238.6
+    },
+    {
+        "id": 10,
+        "year": 2015,
+        "population": 69325.4
+    },
+    {
+        "id": 11,
+        "year": 2016,
+        "population": 98165.15
+    },
+    {
+        "id": 12,
+        "year": 2017,
+        "population": 43537.3
+    },
+    {
+        "id": 13,
+        "year": 2018,
+        "population": 36839
+    },
+    {
+        "id": 14,
+        "year":2019, 
+        "population": 61717.75
+    },
+    {
+        "id": 15,
+        "year": 2020,
+        "population": 52531.95
+    }
+]

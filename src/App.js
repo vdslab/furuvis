@@ -1,9 +1,7 @@
-import * as topojson from "topojson";
-import * as d3 from "d3";
-import { useEffect, useState } from "react";
-import { Header } from "./components/Header";
-import { Main } from "./components/Main";
-import { Footer } from "./components/Footer";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import "bulma/css/bulma.css";
 const App = () => {
   return (
     <div>
