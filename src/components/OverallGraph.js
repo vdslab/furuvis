@@ -72,7 +72,7 @@ const OverallGraph = ({ effect }) => {
     .domain([0, d3.extent(detailData, (item) => item["price"])[1]])
     .range([contentHeight, 0]);
   return (
-    <div className="column is-5">
+    <div className="column is-7">
       <div className="box">
         <svg
           viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
