@@ -47,8 +47,10 @@ const JapanMap = ({ currentArea }) => {
   }, [currentArea]);
   if (!japanPath.length) {
     return (
-      <div className="box">
-        <p>loading</p>
+      <div className="column is-5">
+        <div className="box">
+          <p>loading</p>
+        </div>
       </div>
     );
   }

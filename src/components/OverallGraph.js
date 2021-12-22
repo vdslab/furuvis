@@ -23,7 +23,7 @@ const OverallGraph = ({ effect }) => {
     })();
   }, []);
   if (population.length === 0) {
-    return <div>Loading...</div>;
+    return <div className="column is-5">Loading...</div>;
   }
   const margin = {
     top: 50,
