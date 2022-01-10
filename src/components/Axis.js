@@ -3,6 +3,7 @@ export const VerricalAxis = ({ scale, graphHeight, label }) => {
   const x = 0;
   const [y1, y2] = scale.range();
   const deviceWidth = window.innerWidth;
+
   return (
     <g>
       <line

@@ -7,7 +7,6 @@ const Main = () => {
   return (
     <div className="columns">
       <JapanMap currentArea={area} />
-      {/* <MainView /> */}
       <OverallGraph effect={setArea} />
     </div>
   );

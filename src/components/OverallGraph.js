@@ -8,6 +8,7 @@ const OverallGraph = ({ effect }) => {
   const [displayYear, setDisplayYear] = useState(null);
   const [detailData, setDetailData] = useState([]);
   const [targetArea, setTargetArea] = useState(null);
+
   useEffect(() => {
     (async () => {
       const res_popu = await fetch("./data/population_test.json");
@@ -56,7 +57,6 @@ const OverallGraph = ({ effect }) => {
   };
   const mouseEnterAreaHandler = (e) => {
     effect(e.currentTarget.dataset.id);
-    console.log(e.currentTarget.dataset.id);
   };
 
   const yScalePopulation = d3
