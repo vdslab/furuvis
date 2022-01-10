@@ -56,7 +56,7 @@ export const HorizontalAxis = ({ scale, graphWidth, graphHeight, label }) => {
   const [x1, x2] = scale.range();
   return (
     <g>
-      <line x1={x1} y1={y} x2={x2 + 5} y2={y} stroke={strokeColor}></line>
+      <line x1={x1} y1={y} x2={x2 + 25} y2={y} stroke={strokeColor}></line>
       <g>
         <g transform={`translate(${graphWidth / 2}, ${y + 40})`}>
           <text
@@ -72,14 +72,14 @@ export const HorizontalAxis = ({ scale, graphWidth, graphHeight, label }) => {
 
         {scale.ticks(5).map((x, i) => {
           return (
-            <g key={i} transform={`translate(${scale(x)}, 0)`}>
-              <line
+            <g key={i} transform={`translate(${scale(x) + 20}, 0)`}>
+              {/* <line
                 x1="0"
                 y1={graphHeight}
                 x2="0"
                 y2={graphHeight - 10}
                 stroke={strokeColor}
-              ></line>
+              ></line> */}
               <text
                 x="0"
                 y={y + 15}

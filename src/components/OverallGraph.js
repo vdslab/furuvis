@@ -8,7 +8,7 @@ const OverallGraph = ({ effect }) => {
   const [displayYear, setDisplayYear] = useState(null);
   const [detailData, setDetailData] = useState([]);
   const [targetArea, setTargetArea] = useState(null);
-
+  const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
   useEffect(() => {
     (async () => {
       const res_popu = await fetch("./data/population_test.json");
@@ -78,7 +78,6 @@ const OverallGraph = ({ effect }) => {
           viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
           width={svgWidth}
           height={svgHeight}
-          // style={{ border: "1px solid black" }}
         >
           {displayYear === null && graphType && (
             <HorizontalAxis
@@ -98,19 +97,22 @@ const OverallGraph = ({ effect }) => {
           {displayYear === null && graphType === "price" && (
             <g>
               {price.map((item, i) => {
-                const preData = i > 0 ? price[i - 1] : null;
-                if (i > 0) {
-                  return (
-                    <line
-                      key={item.id}
-                      x1={xScaleYear(preData["year"])}
-                      y1={yScalePrice(preData.price)}
-                      x2={xScaleYear(item["year"])}
-                      y2={yScalePrice(item.price)}
-                      stroke="black"
-                    ></line>
-                  );
-                }
+                const x = xScaleYear(item["year"]) + 20;
+                const y = yScalePrice(item["price"]);
+
+                console.log(xScaleYear(item["year"]));
+
+                return (
+                  <path
+                    key={item.id}
+                    d={`M ${x - 10} ${y}
+                       H ${x + 10} V ${contentHeight} H ${x - 10} 
+                      V ${y}
+                      `}
+                    stroke={colorScale("price")}
+                    fill={colorScale("price")}
+                  />
+                );
               })}
             </g>
           )}
@@ -120,14 +122,23 @@ const OverallGraph = ({ effect }) => {
                 const preData = i > 0 ? population[i - 1] : null;
                 if (i > 0) {
                   return (
-                    <line
-                      key={item.id}
-                      x1={xScaleYear(preData["year"])}
-                      y1={yScalePopulation(preData.population)}
-                      x2={xScaleYear(item["year"])}
-                      y2={yScalePopulation(item.population)}
-                      stroke="black"
-                    ></line>
+                    <g>
+                      <line
+                        key={item.id}
+                        x1={xScaleYear(preData["year"])}
+                        y1={yScalePopulation(preData.population)}
+                        x2={xScaleYear(item["year"])}
+                        y2={yScalePopulation(item.population)}
+                        stroke={colorScale("population")}
+                      ></line>
+                      <circle
+                        key={item.id}
+                        cx={xScaleYear(item["year"])}
+                        cy={yScalePopulation(item.population)}
+                        r="2"
+                        fill={colorScale("population")}
+                      ></circle>
+                    </g>
                   );
                 }
               })}
@@ -151,19 +162,20 @@ const OverallGraph = ({ effect }) => {
           {displayYear === 2019 && detailData.length > 0 && (
             <g>
               {detailData.map((item, i) => {
-                const preData = i > 0 ? detailData[i - 1] : null;
-                if (i > 0) {
-                  return (
-                    <line
-                      key={item.id}
-                      x1={xScaleAreaName(preData["rank"])}
-                      y1={yScale2019Price(preData.price)}
-                      x2={xScaleAreaName(item["rank"])}
-                      y2={yScale2019Price(item.price)}
-                      stroke="black"
-                    ></line>
-                  );
-                }
+                const x = xScaleAreaName(item["rank"]);
+                const y = yScale2019Price(item["price"]);
+
+                return (
+                  <path
+                    key={item.id}
+                    d={`M ${x - 10} ${y}
+                   H ${x + 10} V ${contentHeight} H ${x - 10} 
+                  V ${y}
+                  `}
+                    stroke={colorScale("price")}
+                    fill={colorScale("price")}
+                  />
+                );
               })}
             </g>
           )}
