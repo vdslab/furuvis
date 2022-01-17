@@ -1,13 +1,15 @@
 import JapanMap from "./JapanMap";
-// import MainView from "./MainView";
 import OverallGraph from "./OverallGraph";
 import { useEffect, useState } from "react";
+import IndividualGraph from "./IndividualGraph";
 const Main = () => {
   const [area, setArea] = useState(null);
+  const [year, setYear] = useState(null);
   return (
-    <div className="columns">
+    <div className="columns is-multiline" style={{ marginTop: "10px" }}>
       <JapanMap currentArea={area} />
-      <OverallGraph effect={setArea} />
+      <OverallGraph setYear={setYear} />
+      <IndividualGraph setArea={setArea} year={year} />
     </div>
   );
 };

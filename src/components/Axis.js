@@ -1,3 +1,5 @@
+import * as d3 from "d3";
+
 export const VerricalAxis = ({ scale, graphHeight, label }) => {
   const strokeColor = "#888";
   const x = 0;
@@ -48,12 +50,28 @@ export const VerricalAxis = ({ scale, graphHeight, label }) => {
     </g>
   );
 };
-export const HorizontalAxis = ({ scale, graphWidth, graphHeight, label }) => {
+export const HorizontalAxis = ({
+  scale,
+  graphWidth,
+  graphHeight,
+  label,
+  setData,
+  graphType,
+  optionData,
+}) => {
+  if (graphType === "area") {
+    console.log("it is area");
+    console.log(optionData);
+  }
   const strokeColor = "#888";
   const y = graphHeight;
   const deviceWidth = window.innerWidth;
-
+  const tickCount = graphType === "year" ? 10 : 20;
   const [x1, x2] = scale.range();
+  const clickYearHandler = (e) => {
+    console.log("year set" + e.currentTarget.dataset.id);
+    setData(e.currentTarget.dataset.id);
+  };
   return (
     <g>
       <line x1={x1} y1={y} x2={x2 + 25} y2={y} stroke={strokeColor}></line>
@@ -70,7 +88,8 @@ export const HorizontalAxis = ({ scale, graphWidth, graphHeight, label }) => {
           </text>
         </g>
 
-        {scale.ticks(5).map((x, i) => {
+        {scale.ticks(tickCount).map((x, i) => {
+          console.log(i);
           return (
             <g key={i} transform={`translate(${scale(x) + 20}, 0)`}>
               {/* <line
@@ -85,9 +104,13 @@ export const HorizontalAxis = ({ scale, graphWidth, graphHeight, label }) => {
                 y={y + 15}
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontSize={deviceWidth > 768 ? "12" : "10"}
+                fontSize={graphType !== "area" ? "12" : "5"}
+                data-id={
+                  graphType !== "area" || i === 20 ? x : optionData[i]["id"]
+                }
+                onClick={clickYearHandler}
               >
-                {x}
+                {graphType !== "area" || i === 20 ? x : optionData[i]["name"]}
               </text>
             </g>
           );
