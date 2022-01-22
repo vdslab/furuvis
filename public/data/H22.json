@@ -1,0 +1,142 @@
+[
+    {
+        "id": "131091",
+        "prefecture": "東京都",
+        "area": "品川区",
+        "price": 1522458.295,
+        "population": 351350
+    },
+    {
+        "id": "281000",
+        "prefecture": "兵庫県",
+        "area": "神戸市",
+        "price": 1156701,
+        "population": 1544200
+    },
+    {
+        "id": "132063",
+        "prefecture": "東京都",
+        "area": "府中市",
+        "price": 502233.668,
+        "population": 44421
+    },
+    {
+        "id": "271004",
+        "prefecture": "大阪府",
+        "area": "大阪市",
+        "price": 214272.072,
+        "population": 2665314
+    },
+    {
+        "id": "132047",
+        "prefecture": "東京都",
+        "area": "三鷹市",
+        "price": 213222.204,
+        "population": 179799
+    },
+    {
+        "id": "131121",
+        "prefecture": "東京都",
+        "area": "世田谷区",
+        "price": 130318.029,
+        "population": 835819
+    },
+    {
+        "id": "131105",
+        "prefecture": "東京都",
+        "area": "目黒区",
+        "price": 119617.098,
+        "population": 254185
+    },
+    {
+        "id": "131059",
+        "prefecture": "東京都",
+        "area": "文京区",
+        "price": 118488,
+        "population": 191194
+    },
+    {
+        "id": "121002",
+        "prefecture": "千葉県",
+        "area": "千葉市",
+        "price": 117088.626,
+        "population": 961749
+    },
+    {
+        "id": "212016",
+        "prefecture": "岐阜県",
+        "area": "岐阜市",
+        "price": 105145,
+        "population": 413239
+    },
+    {
+        "id": "142042",
+        "prefecture": "神奈川県",
+        "area": "鎌倉市",
+        "price": 100191,
+        "population": 174314
+    },
+    {
+        "id": "231002",
+        "prefecture": "愛知県",
+        "area": "名古屋市",
+        "price": 69298.046,
+        "population": 2263894
+    },
+    {
+        "id": "063614",
+        "prefecture": "山形県",
+        "area": "金山町",
+        "price": 69131,
+        "population": 6365
+    },
+    {
+        "id": "131237",
+        "prefecture": "東京都",
+        "area": "江戸川区",
+        "price": 68367.601,
+        "population": 654537
+    },
+    {
+        "id": "012076",
+        "prefecture": "北海道",
+        "area": "帯広市",
+        "price": 65489.039,
+        "population": 168057
+    },
+    {
+        "id": "041002",
+        "prefecture": "宮城県",
+        "area": "仙台市",
+        "price": 65249.49,
+        "population": 1045903
+    },
+    {
+        "id": "016942",
+        "prefecture": "北海道",
+        "area": "羅臼町",
+        "price": 60069.062,
+        "population": 5996
+    },
+    {
+        "id": "422118",
+        "prefecture": "長崎県",
+        "area": "五島市",
+        "price": 57787.3,
+        "population": 40621
+    },
+    {
+        "id": "032115",
+        "prefecture": "岩手県",
+        "area": "釜石市",
+        "price": 57179.139,
+        "population": 40056
+    },
+    {
+        "id": "341002",
+        "prefecture": "広島県",
+        "area": "広島市",
+        "price": 56615,
+        "population": 1173843
+    }
+]

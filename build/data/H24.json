@@ -1,0 +1,142 @@
+[
+    {
+        "id": "132063",
+        "prefecture": "東京都",
+        "area": "府中市",
+        "price": 429590.576,
+        "population": 256230
+    },
+    {
+        "id": "131181",
+        "prefecture": "東京都",
+        "area": "荒川区",
+        "price": 311933.716,
+        "population": 206749
+    },
+    {
+        "id": "231002",
+        "prefecture": "愛知県",
+        "area": "名古屋市",
+        "price": 289546.842,
+        "population": 2266851
+    },
+    {
+        "id": "032115",
+        "prefecture": "岩手県",
+        "area": "釜石市",
+        "price": 214423.711,
+        "population": 22671
+    },
+    {
+        "id": "131156",
+        "prefecture": "東京都",
+        "area": "杉並区",
+        "price": 174389.231,
+        "population": 540021
+    },
+    {
+        "id": "122203",
+        "prefecture": "千葉県",
+        "area": "流山市",
+        "price": 170997.465,
+        "population": 168024
+    },
+    {
+        "id": "402206",
+        "prefecture": "福岡県",
+        "area": "宗像市",
+        "price": 157252,
+        "population": 96194
+    },
+    {
+        "id": "131229",
+        "prefecture": "東京都",
+        "area": "葛飾区",
+        "price": 154677.597,
+        "population": 447170
+    },
+    {
+        "id": "131059",
+        "prefecture": "東京都",
+        "area": "文京区",
+        "price": 153901,
+        "population": 201257
+    },
+    {
+        "id": "212016",
+        "prefecture": "岐阜県",
+        "area": "岐阜市",
+        "price": 131515,
+        "population": 410410
+    },
+    {
+        "id": "011002",
+        "prefecture": "北海道",
+        "area": "札幌市",
+        "price": 121571.81,
+        "population": 1928776
+    },
+    {
+        "id": "142123",
+        "prefecture": "神奈川県",
+        "area": "厚木市",
+        "price": 112563.102,
+        "population": 224776
+    },
+    {
+        "id": "422045",
+        "prefecture": "長崎県",
+        "area": "諫早市",
+        "price": 109500,
+        "population": 138865
+    },
+    {
+        "id": "082198",
+        "prefecture": "茨城県",
+        "area": "牛久市",
+        "price": 100438,
+        "population": 83460
+    },
+    {
+        "id": "072095",
+        "prefecture": "福島県",
+        "area": "相馬市",
+        "price": 100247.777,
+        "population": 35995
+    },
+    {
+        "id": "281000",
+        "prefecture": "兵庫県",
+        "area": "神戸市",
+        "price": 94284.41,
+        "population": 1538047
+    },
+    {
+        "id": "132080",
+        "prefecture": "東京都",
+        "area": "調布市",
+        "price": 93458.145,
+        "population": 223163
+    },
+    {
+        "id": "312029",
+        "prefecture": "鳥取県",
+        "area": "米子市",
+        "price": 89058.764,
+        "population": 149313
+    },
+    {
+        "id": "141003",
+        "prefecture": "神奈川県",
+        "area": "横浜市",
+        "price": 86639.444,
+        "population": 3693788
+    },
+    {
+        "id": "013030",
+        "prefecture": "北海道",
+        "area": "当別町",
+        "price": 83793,
+        "population": 17835
+    }
+]

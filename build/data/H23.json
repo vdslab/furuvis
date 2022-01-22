@@ -1,0 +1,142 @@
+[
+    {
+        "id": "032107",
+        "prefecture": "岩手県",
+        "area": "釜石市",
+        "price": 2064060.521,
+        "population": 37909
+    },
+    {
+        "id": "072095",
+        "prefecture": "福島県",
+        "area": "相馬市",
+        "price": 627772.555,
+        "population": 36531
+    },
+    {
+        "id": 132063,
+        "prefecture": "東京都",
+        "area": "府中市",
+        "price": 443577.494,
+        "population": 255586
+    },
+    {
+        "id": 402192,
+        "prefecture": "福岡県",
+        "area": "大野城市",
+        "price": 301310,
+        "population": 96578
+    },
+    {
+        "id": "012114",
+        "prefecture": "北海道",
+        "area": "網走市",
+        "price": 268316.807,
+        "population": 38162
+    },
+    {
+        "id": "043621",
+        "prefecture": "宮城県",
+        "area": "山元町",
+        "price": 216663.628,
+        "population": 14628
+    },
+    {
+        "id": 132080,
+        "prefecture": "東京都",
+        "area": "調布市",
+        "price": 162753.341,
+        "population": 222518
+    },
+    {
+        "id": 131059,
+        "prefecture": "東京都",
+        "area": "文京区",
+        "price": 133523,
+        "population": 200319
+    },
+    {
+        "id": 131113,
+        "prefecture": "東京都",
+        "area": "大田区",
+        "price": 104168,
+        "population": 694524
+    },
+    {
+        "id": "011002",
+        "prefecture": "北海道",
+        "area": "札幌市",
+        "price": 100329.8,
+        "population": 1921935
+    },
+    {
+        "id": 112232,
+        "prefecture": "埼玉県",
+        "area": "蕨市",
+        "price": 100183,
+        "population": 68914
+    },
+    {
+        "id": "041009",
+        "prefecture": "宮城県",
+        "area": "仙台市",
+        "price": 94637.878,
+        "population": 1049493
+    },
+    {
+        "id": 141003,
+        "prefecture": "神奈川県",
+        "area": "横浜市",
+        "price": 91513.734,
+        "population": 3691693
+    },
+    {
+        "id": 231002,
+        "prefecture": "愛知県",
+        "area": "名古屋市",
+        "price": 87294.146,
+        "population": 2266517
+    },
+    {
+        "id": 281000,
+        "prefecture": "兵庫県",
+        "area": "神戸市",
+        "price": 83851,
+        "population": 1544496
+    },
+    {
+        "id": "142051",
+        "prefecture": "神奈川県",
+        "area": "藤沢市",
+        "price": 73178.539,
+        "population": 415288
+    },
+    {
+        "id": "032026",
+        "prefecture": "岩手県",
+        "area": "宮古市",
+        "price": 72804.824,
+        "population": 58893
+    },
+    {
+        "id": "131130",
+        "prefecture": "東京都",
+        "area": "渋谷区",
+        "price": 60954,
+        "population": 209284
+    },
+    {
+        "id": "131105",
+        "prefecture": "東京都",
+        "area": "目黒区",
+        "price": 57890.333,
+        "population": 250249
+    },
+    {
+        "id": "272191",
+        "prefecture": "大阪府",
+        "area": "和泉市",
+        "price": 57767.949,
+        "population": 187334
+    }
+]

@@ -59,17 +59,12 @@ export const HorizontalAxis = ({
   graphType,
   optionData,
 }) => {
-  if (graphType === "area") {
-    console.log("it is area");
-    console.log(optionData);
-  }
   const strokeColor = "#888";
   const y = graphHeight;
   const deviceWidth = window.innerWidth;
   const tickCount = graphType === "year" ? 10 : 20;
   const [x1, x2] = scale.range();
   const clickYearHandler = (e) => {
-    console.log("year set" + e.currentTarget.dataset.id);
     setData(e.currentTarget.dataset.id);
   };
   return (
@@ -89,7 +84,6 @@ export const HorizontalAxis = ({
         </g>
 
         {scale.ticks(tickCount).map((x, i) => {
-          console.log(i);
           return (
             <g key={i} transform={`translate(${scale(x) + 20}, 0)`}>
               {/* <line
@@ -106,11 +100,11 @@ export const HorizontalAxis = ({
                 dominantBaseline="central"
                 fontSize={graphType !== "area" ? "12" : "5"}
                 data-id={
-                  graphType !== "area" || i === 20 ? x : optionData[i]["id"]
+                  graphType !== "area" || i === 20 ? x : optionData[i].id
                 }
                 onClick={clickYearHandler}
               >
-                {graphType !== "area" || i === 20 ? x : optionData[i]["name"]}
+                {graphType !== "area" || i === 20 ? x : optionData[i].area}
               </text>
             </g>
           );

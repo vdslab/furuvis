@@ -1,0 +1,142 @@
+[
+    {
+        "id": "132047",
+        "prefecture": "東京都",
+        "area": "三鷹市",
+        "price": 429789.015,
+        "population": 180570
+    },
+    {
+        "id": "132063",
+        "prefecture": "東京都",
+        "area": "府中市",
+        "price": 375694.764,
+        "population": 257062
+    },
+    {
+        "id": "102024",
+        "prefecture": "群馬県",
+        "area": "高崎市",
+        "price": 314430.661,
+        "population": 371050
+    },
+    {
+        "id": "231002",
+        "prefecture": "愛知県",
+        "area": "名古屋市",
+        "price": 293798.323,
+        "population": 2268217
+    },
+    {
+        "id": "312029",
+        "prefecture": "鳥取県",
+        "area": "米子市",
+        "price": 279241.257,
+        "population": 150214
+    },
+    {
+        "id": "204048",
+        "prefecture": "長野県",
+        "area": "阿南町",
+        "price": 265444.25,
+        "population": 5175
+    },
+    {
+        "id": "413879",
+        "prefecture": "佐賀県",
+        "area": "玄海町",
+        "price": 248594.353,
+        "population": 6135
+    },
+    {
+        "id": "453838",
+        "prefecture": "宮崎県",
+        "area": "綾町",
+        "price": 247328.442,
+        "population": 7275
+    },
+    {
+        "id": "016331",
+        "prefecture": "北海道",
+        "area": "上士幌町",
+        "price": 243503.104,
+        "population": 4963
+    },
+    {
+        "id": "271004",
+        "prefecture": "大阪府",
+        "area": "大阪市",
+        "price": 187931.015,
+        "population": 2680258
+    },
+    {
+        "id": "072095",
+        "prefecture": "福島県",
+        "area": "相馬市",
+        "price": 157740.872,
+        "population": 35695
+    },
+    {
+        "id": "011002",
+        "prefecture": "北海道",
+        "area": "札幌市",
+        "price": 139243.829,
+        "population": 1926639
+    },
+    {
+        "id": "312011",
+        "prefecture": "鳥取県",
+        "area": "鳥取市",
+        "price": 125800.394,
+        "population": 197449
+    },
+    {
+        "id": "203211",
+        "prefecture": "長野県",
+        "area": "軽井沢町",
+        "price": 125557.688,
+        "population": 19578
+    },
+    {
+        "id": "212130",
+        "prefecture": "岐阜県",
+        "area": "各務原市",
+        "price": 124977,
+        "population": 148796
+    },
+    {
+        "id": "312045",
+        "prefecture": "鳥取県",
+        "area": "境港市",
+        "price": 119070.803,
+        "population": 35259
+    },
+    {
+        "id": "322024",
+        "prefecture": "島根県",
+        "area": "浜田市",
+        "price": 114880.043,
+        "population": 57778
+    },
+    {
+        "id": "131059",
+        "prefecture": "東京都",
+        "area": "文京区",
+        "price": 109080.034,
+        "population": 201257
+    },
+    {
+        "id": "212075",
+        "prefecture": "岐阜県",
+        "area": "美濃市",
+        "price": 108025.335,
+        "population": 22167
+    },
+    {
+        "id": "244619",
+        "prefecture": "三重県",
+        "area": "玉城町",
+        "price": 106945.831,
+        "population": 15597
+    }
+]

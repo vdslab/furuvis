@@ -1,0 +1,142 @@
+[
+    {
+        "id": "422070",
+        "prefecture": "長崎県",
+        "area": "平戸市",
+        "price": 1462596.582,
+        "population": 33781
+    },
+    {
+        "id": "413879",
+        "prefecture": "佐賀県",
+        "area": "玄海町",
+        "price": 1066629.652,
+        "population": 6006
+    },
+    {
+        "id": "016331",
+        "prefecture": "北海道",
+        "area": "上士幌町",
+        "price": 957168.617,
+        "population": 2617
+    },
+    {
+        "id": "453838",
+        "prefecture": "宮崎県",
+        "area": "綾町",
+        "price": 943967.93,
+        "population": 7316
+    },
+    {
+        "id": "062103",
+        "prefecture": "山形県",
+        "area": "天童市",
+        "price": 780874.582,
+        "population": 124232
+    },
+    {
+        "id": "322024",
+        "prefecture": "島根県",
+        "area": "浜田市",
+        "price": 726991.562,
+        "population": 56990
+    },
+    {
+        "id": "202134",
+        "prefecture": "長野県",
+        "area": "飯山市",
+        "price": 625473.086,
+        "population": 22164
+    },
+    {
+        "id": "412082",
+        "prefecture": "佐賀県",
+        "area": "小城市",
+        "price": 511962.238,
+        "population": 45816
+    },
+    {
+        "id": "452025",
+        "prefecture": "宮崎県",
+        "area": "都城市",
+        "price": 499823.136,
+        "population": 166424
+    },
+    {
+        "id": "312029",
+        "prefecture": "鳥取県",
+        "area": "米子市",
+        "price": 475689.617,
+        "population": 147923
+    },
+    {
+        "id": "272132",
+        "prefecture": "大阪府",
+        "area": "泉佐野市",
+        "price": 467565.641,
+        "population": 101221
+    },
+    {
+        "id": "312045",
+        "prefecture": "鳥取県",
+        "area": "境港市",
+        "price": 420856.392,
+        "population": 34514
+    },
+    {
+        "id": "204161",
+        "prefecture": "長野県",
+        "area": "豊丘村",
+        "price": 402416.604,
+        "population": 6921
+    },
+    {
+        "id": "132063",
+        "prefecture": "東京都",
+        "area": "府中市",
+        "price": 399628.853,
+        "population": 259082
+    },
+    {
+        "id": "142051",
+        "prefecture": "神奈川県",
+        "area": "藤沢市",
+        "price": 398585.046,
+        "population": 427268
+    },
+    {
+        "id": "341002",
+        "prefecture": "広島県",
+        "area": "広島市",
+        "price": 380072,
+        "population": 1194034
+    },
+    {
+        "id": "223069",
+        "prefecture": "静岡県",
+        "area": "西伊豆町",
+        "price": 378125.655,
+        "population": 9035
+    },
+    {
+        "id": "042021",
+        "prefecture": "宮城県",
+        "area": "石巻市",
+        "price": 316818.248,
+        "population": 146906
+    },
+    {
+        "id": "312027",
+        "prefecture": "鳥取県",
+        "area": "倉吉市",
+        "price": 289010.245,
+        "population": 49091
+    },
+    {
+        "id": "282260",
+        "prefecture": "兵庫県",
+        "area": "淡路市",
+        "price": 287509.312,
+        "population": 43431
+    }
+]

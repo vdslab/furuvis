@@ -1,0 +1,142 @@
+[
+    {
+        "id": "272132",
+        "prefecture": "大阪府",
+        "area": "泉佐野市",
+        "price": 13532509.287,
+        "population": 100416
+    },
+    {
+        "id": "454061",
+        "prefecture": "宮崎県",
+        "area": "都農町",
+        "price": 7914818.71,
+        "population": 10256
+    },
+    {
+        "id": 452025,
+        "prefecture": "宮崎県",
+        "area": "都城市",
+        "price": 7474219.521,
+        "population": 162995
+    },
+    {
+        "id": "413461",
+        "prefecture": "佐賀県",
+        "area": "みやき町",
+        "price": 7223542.226,
+        "population": 25094
+    },
+    {
+        "id": "413453",
+        "prefecture": "佐賀県",
+        "area": "上峰町",
+        "price": 6672269.728999999,
+        "population": 9348
+    },
+    {
+        "id": "303615",
+        "prefecture": "和歌山県",
+        "area": "湯浅町",
+        "price": 4951282.489,
+        "population": 11660
+    },
+    {
+        "id": "412023",
+        "prefecture": "佐賀県",
+        "area": "唐津市",
+        "price": 4388880,
+        "population": 11928
+    },
+    {
+        "id": "012238",
+        "prefecture": "北海道",
+        "area": "根室市",
+        "price": 3973346.448,
+        "population": 26399
+    },
+    {
+        "id": "393029",
+        "prefecture": "高知県",
+        "area": "奈半利町",
+        "price": 3905638.554,
+        "population": 3159
+    },
+    {
+        "id": "222143",
+        "prefecture": "静岡県",
+        "area": "藤枝市",
+        "price": 3708148.155,
+        "population": 143031
+    },
+    {
+        "id": "442143",
+        "prefecture": "大分県",
+        "area": "国東市",
+        "price": 3239193.796,
+        "population": 27329
+    },
+    {
+        "id": "462217",
+        "prefecture": "鹿児島県",
+        "area": "志布志市",
+        "price": 3039999.838,
+        "population": 30627
+    },
+    {
+        "id": "012455",
+        "prefecture": "北海道",
+        "area": "森町",
+        "price": 2980582,
+        "population": 15892
+    },
+    {
+        "id": "062103",
+        "prefecture": "山形県",
+        "area": "天童市",
+        "price": 2899458.8370000003,
+        "population": 62016
+    },
+    {
+        "id": "223441",
+        "prefecture": "静岡県",
+        "area": "小山町",
+        "price": 2736953.1459999997,
+        "population": 19038
+    },
+    {
+        "id": "222127",
+        "prefecture": "静岡県",
+        "area": "焼津市",
+        "price": 2689277.847,
+        "population": 137666
+    },
+    {
+        "id": "412091",
+        "prefecture": "佐賀県",
+        "area": "嬉野市",
+        "price": 2669650,
+        "population": 26636
+    },
+    {
+        "id": "454010",
+        "prefecture": "宮崎県",
+        "area": "高鍋町",
+        "price": 2569169.352,
+        "population": 20539
+    },
+    {
+        "id": "214043",
+        "prefecture": "岐阜県",
+        "area": "池田町",
+        "price": 2551767.686,
+        "population": 23882
+    },
+    {
+        "id": "204862",
+        "prefecture": "長野県",
+        "area": "小谷村",
+        "price": 2424072.8869999996,
+        "population": 2835
+    }
+]

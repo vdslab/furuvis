@@ -1,0 +1,142 @@
+[
+    {
+        "id": "452025",
+        "prefecture": "宮崎県",
+        "area": "都城市",
+        "price": 4231233.673,
+        "population": 165029
+    },
+    {
+        "id": "222127",
+        "prefecture": "静岡県",
+        "area": "焼津市",
+        "price": 3825581.805,
+        "population": 139462
+    },
+    {
+        "id": "062103",
+        "prefecture": "山形県",
+        "area": "天童市",
+        "price": 3227844.109,
+        "population": 62155
+    },
+    {
+        "id": "464686",
+        "prefecture": "鹿児島県",
+        "area": "大崎町",
+        "price": 2719641.628,
+        "population": 13188
+    },
+    {
+        "id": "332119",
+        "prefecture": "岡山県",
+        "area": "備前市",
+        "price": 2715686.156,
+        "population": 35012
+    },
+    {
+        "id": "422029",
+        "prefecture": "長崎県",
+        "area": "佐世保市",
+        "price": 2647596.528,
+        "population": 254954
+    },
+    {
+        "id": "422070",
+        "prefecture": "長崎県",
+        "area": "平戸市",
+        "price": 2599785.142,
+        "population": 31739
+    },
+    {
+        "id": "202096",
+        "prefecture": "長野県",
+        "area": "伊那市",
+        "price": 2582627.324,
+        "population": 68157
+    },
+    {
+        "id": "413453",
+        "prefecture": "佐賀県",
+        "area": "上峰町",
+        "price": 2129960,
+        "population": 9323
+    },
+    {
+        "id": "322024",
+        "prefecture": "島根県",
+        "area": "浜田市",
+        "price": 2093573.316,
+        "population": 57798
+    },
+    {
+        "id": "062022",
+        "prefecture": "山形県",
+        "area": "米沢市",
+        "price": 1958246.938,
+        "population": 85651
+    },
+    {
+        "id": "124419",
+        "prefecture": "千葉県",
+        "area": "大多喜町",
+        "price": 1855205.664,
+        "population": 9754
+    },
+    {
+        "id": "402036",
+        "prefecture": "福岡県",
+        "area": "久留米市",
+        "price": 1759429.335,
+        "population": 304485
+    },
+    {
+        "id": "202134",
+        "prefecture": "長野県",
+        "area": "飯山市",
+        "price": 1722433.096,
+        "population": 21272
+    },
+    {
+        "id": "016331",
+        "prefecture": "北海道",
+        "area": "上士幌町",
+        "price": 1536559.369,
+        "population": 4886
+    },
+    {
+        "id": "412082",
+        "prefecture": "佐賀県",
+        "area": "小城市",
+        "price": 1484497.594,
+        "population": 44224
+    },
+    {
+        "id": "453838",
+        "prefecture": "宮崎県",
+        "area": "綾町",
+        "price": 1380341.483,
+        "population": 7333
+    },
+    {
+        "id": "062065",
+        "prefecture": "山形県",
+        "area": "寒河江市",
+        "price": 1371787.564,
+        "population": 41151
+    },
+    {
+        "id": "393029",
+        "prefecture": "高知県",
+        "area": "奈半利町",
+        "price": 1349930.679,
+        "population": 3306
+    },
+    {
+        "id": "012238",
+        "prefecture": "北海道",
+        "area": "根室市",
+        "price": 1290101.985,
+        "population": 27629
+    }
+]

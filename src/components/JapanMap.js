@@ -57,7 +57,10 @@ const JapanMap = ({ currentArea }) => {
       target.features = json.features.filter(
         (item) => item.properties.N03_007 == strArea
       );
-
+      console.log("areaが更新されました");
+      if (currentArea != null) {
+        console.log(currentArea);
+      }
       const centerPoint = projection(d3.geoCentroid(target));
       setTargetPoint(centerPoint);
       setArea(currentArea);
@@ -75,7 +78,10 @@ const JapanMap = ({ currentArea }) => {
   }
 
   return (
-    <div className="column is-7" style={{ marginLeft: "10px" }}>
+    <div
+      className="column is-5"
+      style={{ marginLeft: "20px", marginRight: "10px" }}
+    >
       <div className="box">
         {/* <svg viewBox="-50 0 770 325" width="500" height="550"> */}
         <ZoomableSVG width={svgWidth} height={svgHeight}>
@@ -108,7 +114,6 @@ const JapanMap = ({ currentArea }) => {
             ""
           )}
         </ZoomableSVG>
-        {/* </svg> */}
       </div>
     </div>
   );

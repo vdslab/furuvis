@@ -8,8 +8,10 @@ const Main = () => {
   return (
     <div className="columns is-multiline" style={{ marginTop: "10px" }}>
       <JapanMap currentArea={area} />
-      <OverallGraph setYear={setYear} />
-      <IndividualGraph setArea={setArea} year={year} />
+      <div className="column is-6">
+        <OverallGraph setYear={setYear} />
+        <IndividualGraph setArea={setArea} year={year} />
+      </div>
     </div>
   );
 };

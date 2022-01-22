@@ -1,0 +1,142 @@
+[
+    {
+        "id": 132063,
+        "prefecture": "東京都",
+        "area": "府中市",
+        "price": 661949.212,
+        "population": 250988
+    },
+    {
+        "id": 341002,
+        "prefecture": "広島県",
+        "area": "広島市",
+        "price": 629148,
+        "population": 1151266
+    },
+    {
+        "id": "011002",
+        "prefecture": "北海道",
+        "area": "札幌市",
+        "price": 397800.697,
+        "population": 1902516
+    },
+    {
+        "id": 131156,
+        "prefecture": "東京都",
+        "area": "杉並区",
+        "price": 328711.746,
+        "population": 527942
+    },
+    {
+        "id": "131059",
+        "prefecture": "東京都",
+        "area": "文京区",
+        "price": 118413,
+        "population": 185782
+    },
+    {
+        "id": "281000",
+        "prefecture": "兵庫県",
+        "area": "神戸市",
+        "price": 112842,
+        "population": 1536433
+    },
+    {
+        "id": "202134",
+        "prefecture": "長野県",
+        "area": "飯山市",
+        "price": 109933.904,
+        "population": 23965
+    },
+    {
+        "id": "271004",
+        "prefecture": "大阪府",
+        "area": "大阪市",
+        "price": 108666.404,
+        "population": 2652099
+    },
+    {
+        "id": "142123",
+        "prefecture": "神奈川県",
+        "area": "厚木市",
+        "price": 107229.395,
+        "population": 226668
+    },
+    {
+        "id": "122068",
+        "prefecture": "千葉県",
+        "area": "木更津市",
+        "price": 107099.177,
+        "population": 124812
+    },
+    {
+        "id": "212016",
+        "prefecture": "岐阜県",
+        "area": "岐阜市",
+        "price": 103971,
+        "population": 411650
+    },
+    {
+        "id": "083640",
+        "prefecture": "茨城県",
+        "area": "大子町",
+        "price": 100755,
+        "population": 22103
+    },
+    {
+        "id": "231002",
+        "prefecture": "愛知県",
+        "area": "名古屋市",
+        "price": 78294.296,
+        "population": 2247752
+    },
+    {
+        "id": "032115",
+        "prefecture": "岩手県",
+        "area": "釜石市",
+        "price": 65781.85,
+        "population": 41386
+    },
+    {
+        "id": "131130",
+        "prefecture": "東京都",
+        "area": "渋谷区",
+        "price": 63439.567,
+        "population": 196510
+    },
+    {
+        "id": "122203",
+        "prefecture": "千葉県",
+        "area": "流山市",
+        "price": 58853.766,
+        "population": 156073
+    },
+    {
+        "id": "012033",
+        "prefecture": "北海道",
+        "area": "小樽市",
+        "price": 56756.6,
+        "population": 136780
+    },
+    {
+        "id": "016659",
+        "prefecture": "北海道",
+        "area": "弟子屈町",
+        "price": 47253.043,
+        "population": 8622
+    },
+    {
+        "id": "152102",
+        "prefecture": "新潟県",
+        "area": "十日町市",
+        "price": 46516.422,
+        "population": 59244
+    },
+    {
+        "id": "012122",
+        "prefecture": "北海道",
+        "area": "留萌市",
+        "price": 44480,
+        "population": 25817
+    }
+]

@@ -1,0 +1,142 @@
+[
+    {
+        "id": "272132",
+        "prefecture": "大阪府",
+        "area": "泉佐野市",
+        "price": 49752906,
+        "population": 100458
+    },
+    {
+        "id": "223441",
+        "prefecture": "静岡県",
+        "area": "小山町",
+        "price": 25062972,
+        "population": 18880
+    },
+    {
+        "id": "303445",
+        "prefecture": "和歌山県",
+        "area": "高野町",
+        "price": 19637067,
+        "population": 3067
+    },
+    {
+        "id": "413461",
+        "prefecture": "佐賀県",
+        "area": "みやき町",
+        "price": 16833835,
+        "population": 25285
+    },
+    {
+        "id": "454061",
+        "prefecture": "宮崎県",
+        "area": "都農町",
+        "price": 9626977,
+        "population": 10129
+    },
+    {
+        "id": 452025,
+        "prefecture": "宮崎県",
+        "area": "都城市",
+        "price": 9562349,
+        "population": 161968
+    },
+    {
+        "id": "273619",
+        "prefecture": "大阪府",
+        "area": "熊取町",
+        "price": 7640427,
+        "population": 43940
+    },
+    {
+        "id": "085464",
+        "prefecture": "茨城県",
+        "area": "境町",
+        "price": 6082537,
+        "population": 24222
+    },
+    {
+        "id": "012455",
+        "prefecture": "北海道",
+        "area": "森町",
+        "price": 5908852,
+        "population": 15575
+    },
+    {
+        "id": "413453",
+        "prefecture": "佐賀県",
+        "area": "上峰町",
+        "price": 5317765,
+        "population": 9389
+    },
+    {
+        "id": "303615",
+        "prefecture": "和歌山県",
+        "area": "湯浅町",
+        "price": 5037975,
+        "population": 11458
+    },
+    {
+        "id": "012238",
+        "prefecture": "北海道",
+        "area": "根室市",
+        "price": 4957077,
+        "population": 25953
+    },
+    {
+        "id": "402133",
+        "prefecture": "福岡県",
+        "area": "行橋市",
+        "price": 4449264,
+        "population": 71144
+    },
+    {
+        "id": "215040",
+        "prefecture": "岐阜県",
+        "area": "七宗町",
+        "price": 3769081,
+        "population": 3482
+    },
+    {
+        "id": "393029",
+        "prefecture": "高知県",
+        "area": "奈半利町",
+        "price": 3745604,
+        "population": 3083
+    },
+    {
+        "id": "406465",
+        "prefecture": "福岡県",
+        "area": "上毛町",
+        "price": 3701573,
+        "population": 2835
+    },
+    {
+        "id": "013463",
+        "prefecture": "北海道",
+        "area": "八雲町",
+        "price": 3681122,
+        "population": 16685
+    },
+    {
+        "id": "062065",
+        "prefecture": "山形県",
+        "area": "寒河江市",
+        "price": 3510647,
+        "population": 40388
+    },
+    {
+        "id": "412023",
+        "prefecture": "佐賀県",
+        "area": "唐津市",
+        "price": 3443169,
+        "population": 118675
+    },
+    {
+        "id": "462217",
+        "prefecture": "鹿児島県",
+        "area": "志布志市",
+        "price": 3270820,
+        "population": 30164
+    }
+]
