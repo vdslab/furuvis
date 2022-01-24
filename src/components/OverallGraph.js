@@ -108,13 +108,14 @@ const OverallGraph = ({ setYear, colorScale }) => {
                       x2={xScaleYear(item["year"]) + 20}
                       y2={yScalePopulation(item.population)}
                       stroke={colorScale("population")}
+                      strokeWidth={"3"}
                     ></line>
                   )}
                   <circle
                     key={item.id}
                     cx={xScaleYear(item["year"]) + 20}
                     cy={yScalePopulation(item.population)}
-                    r="2"
+                    r="4"
                     fill={colorScale("population")}
                   ></circle>
                 </g>
