@@ -8,11 +8,11 @@ const JapanMap = ({ currentArea }) => {
   const [area, setArea] = useState(null);
   const [json, setJson] = useState(null);
   const [targetPoint, setTargetPoint] = useState([]);
-  const svgWidth = 500;
+  const svgWidth = 200;
   const svgHeight = 500;
   const width = 630;
   const height = 250;
-  const scale = 30000 * 0.7 * 0.08;
+  const scale = 30000 * 0.7 * 0.1;
   const east = 138.915833,
     west = 139.796111,
     north = 35.672778,
@@ -20,7 +20,7 @@ const JapanMap = ({ currentArea }) => {
 
   const projection = d3
     .geoMercator()
-    .center([(west + east) / 2 + -4, (north + south) / 2 + 1.8])
+    .center([(west + east) / 2 - 0.5, (north + south) / 2 + 1.8])
     .translate([width / 2, height - 60])
     .scale(scale);
 
@@ -51,16 +51,20 @@ const JapanMap = ({ currentArea }) => {
   useEffect(() => {
     if (json) {
       const target = JSON.parse(JSON.stringify(json));
-      const strArea = String(currentArea).slice(0, -1);
+      const strArea = String(currentArea.id).slice(0, -1);
       target.features.length = 0;
-
-      target.features = json.features.filter(
-        (item) => item.properties.N03_007 == strArea
-      );
+      console.log(currentArea);
+      target.features = json.features.filter((item) => {
+        if (currentArea.area === item.properties.N03_003) {
+          return true;
+        } else if (String(item.properties.N03_007) === strArea) {
+          return true;
+        } else {
+          return false;
+        }
+      });
       console.log("areaが更新されました");
-      if (currentArea != null) {
-        console.log(currentArea);
-      }
+      console.log(target);
       const centerPoint = projection(d3.geoCentroid(target));
       setTargetPoint(centerPoint);
       setArea(currentArea);

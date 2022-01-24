@@ -2,13 +2,13 @@ import * as d3 from "d3";
 import { useEffect, useState } from "react";
 import { VerricalAxis, HorizontalAxis } from "./Axis";
 
-const IndividualGraph = ({ setArea, year }) => {
+const IndividualGraph = ({ setArea, year, colorScale }) => {
   const [detailData, setDetailData] = useState([]);
   const margin = {
     top: 0,
     bottom: 50,
-    left: 200,
-    right: 50,
+    left: 80,
+    right: 150,
   };
 
   const contentWidth = 500;
@@ -56,10 +56,13 @@ const IndividualGraph = ({ setArea, year }) => {
         1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
       ])
     )
-    .range([contentWidth, 0]);
-  const yScale2019Price = d3
+    .range([0, contentWidth]);
+  const yScalePrice = d3
     .scaleLinear()
-    .domain([0, d3.extent(detailData[year], (item) => item["price"])[1]])
+    .domain([
+      0,
+      d3.extent(detailData[year], (item) => item["price"] / 10000)[1],
+    ])
     .range([contentHeight, 0]);
   const yScalePopulation = d3
     .scaleLinear()
@@ -67,71 +70,74 @@ const IndividualGraph = ({ setArea, year }) => {
     .range([contentHeight, 0]);
   if (Object.keys(detailData).length) {
     return (
-      <div className="box" style={{ marginTop: "0" }}>
-        <svg
-          viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
-          width={svgWidth}
-          height={svgHeight}
-        >
-          <g>
-            {detailData[year].map((item, i) => {
-              const x = xScaleAreaName(i);
-              const y = yScale2019Price(item["price"]);
+      <div className="box">
+        <div>
+          <svg
+            viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
+            width={svgWidth}
+            height={svgHeight}
+          >
+            <VerricalAxis
+              scale={yScalePrice}
+              graphWidth={contentWidth}
+              graphHeight={contentHeight}
+              location="left"
+              label="受け入れ金額"
+            />
+            <HorizontalAxis
+              scale={xScaleAreaName}
+              graphWidth={contentWidth}
+              graphHeight={contentHeight}
+              label="市区町村"
+              setData={setArea}
+              graphType="area"
+              optionData={data}
+            />
+            <g>
+              {detailData[year].map((item, i) => {
+                const x = xScaleAreaName(i + 1) + 20;
+                const y = yScalePrice(item["price"] / 10000);
 
-              return (
-                <path
-                  key={item.id}
-                  d={`M ${x - 10} ${y}
+                return (
+                  <path
+                    key={item.id}
+                    d={`M ${x - 10} ${y}
                    H ${x + 10} V ${contentHeight} H ${x - 10} 
                   V ${y}
                   `}
-                  // stroke={colorScale("price")}
-                  // fill={colorScale("price")}
-                />
-              );
-            })}
-          </g>
-          <g>
-            {detailData[year].map((item, i) => {
-              const preData = i > 0 ? detailData[year][i - 1] : null;
-              if (i > 0) {
-                return (
-                  <g key={item.id * 100}>
-                    <line
-                      key={item.id * 10}
-                      x1={xScaleAreaName(i - 1)}
-                      y1={yScalePopulation(preData.population)}
-                      x2={xScaleAreaName(i)}
-                      y2={yScalePopulation(item.population)}
-                      stroke="black"
-                    ></line>
-                    <circle
-                      key={item.id}
-                      cx={xScaleAreaName(item["year"])}
-                      cy={yScalePopulation(item.population)}
-                      r="2"
-                      fill="black"
-                    ></circle>
-                  </g>
+                    fill={colorScale("price")}
+                  />
                 );
-              }
-            })}
-          </g>
-          <VerricalAxis
-            scale={yScale2019Price}
-            graphHeight={contentHeight}
-            label="受け入れ金額"
-          />
-          <HorizontalAxis
-            scale={xScaleAreaName}
-            graphWidth={contentWidth}
-            graphHeight={contentHeight}
-            label="市区町村"
-            setData={setArea}
-            graphType="area"
-            optionData={data}
-          />
-        </svg>
+              })}
+            </g>
+            <g>
+              {detailData[year].map((item, i) => {
+                const preData = i > 0 ? detailData[year][i - 1] : null;
+                if (i > 0) {
+                  return (
+                    <g key={item.id * 100}>
+                      <line
+                        key={item.id * 10}
+                        x1={xScaleAreaName(i) + 20}
+                        y1={yScalePopulation(preData.population)}
+                        x2={xScaleAreaName(i + 1) + 20}
+                        y2={yScalePopulation(item.population)}
+                        stroke={colorScale("population")}
+                      ></line>
+                      <circle
+                        key={item.id}
+                        cx={xScaleAreaName(i + 1) + 20}
+                        cy={yScalePopulation(item.population)}
+                        r="2"
+                        fill={colorScale("population")}
+                      ></circle>
+                    </g>
+                  );
+                }
+              })}
+            </g>
+          </svg>
+        </div>
       </div>
     );
   }

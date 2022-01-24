@@ -18,18 +18,7 @@ function ZoomableSVG({ children, width, height }) {
   }, []);
 
   return (
-    // <svg
-    //   width={"100%"}
-    //   height={"100%"}
-    //   className="has-background-white"
-    //   style={{
-    //     display: "block",
-    //     marginLeft: "auto",
-    //     marginRight: "auto",
-    //   }}
-    // >
-
-    <svg ref={svgRef} viewBox="-50 0 770 325" width="800" height="600">
+    <svg ref={svgRef} viewBox="-50 0 770 325" width="550" height="600">
       <g transform={`translate(${x}, ${y})scale(${k})`}>{children}</g>
     </svg>
   );

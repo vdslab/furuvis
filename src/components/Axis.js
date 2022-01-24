@@ -1,11 +1,14 @@
-import * as d3 from "d3";
-
-export const VerricalAxis = ({ scale, graphHeight, label }) => {
+export const VerricalAxis = ({
+  scale,
+  graphWidth,
+  graphHeight,
+  location,
+  label,
+}) => {
   const strokeColor = "#888";
-  const x = 0;
+  const x = location === "left" ? 0 : graphWidth + 40;
   const [y1, y2] = scale.range();
   const deviceWidth = window.innerWidth;
-
   return (
     <g>
       <line
@@ -17,9 +20,9 @@ export const VerricalAxis = ({ scale, graphHeight, label }) => {
         strokeWidth="2"
       ></line>
       <g>
-        <g transform={`translate(-80, ${graphHeight / 2}) rotate(-90)`}>
+        <g transform={`translate(-60, ${graphHeight / 2}) rotate(-90)`}>
           <text
-            x="0"
+            x={x}
             y="0"
             textAnchor="end"
             dominantBaseline="central"
@@ -31,17 +34,23 @@ export const VerricalAxis = ({ scale, graphHeight, label }) => {
 
         {scale.ticks().map((y, i) => {
           return (
-            <g key={i} transform={`translate(0, ${scale(y)})`}>
-              <line x1="0" y1="0" x2="5" y2="0" stroke={strokeColor}></line>
+            <g key={i} transform={`translate(${x}, ${scale(y)})`}>
+              <line
+                x1="0"
+                y1="0"
+                x2={location === "left" ? 5 : -5}
+                y2="0"
+                stroke={strokeColor}
+              ></line>
               <text
-                x="-8"
+                x={location === "left" ? -8 : 42}
                 y="0"
                 textAnchor="end"
                 dominantBaseline="central"
                 fill="black"
                 fontSize={deviceWidth > 768 ? "12" : "10"}
               >
-                {y}
+                {location === "left" ? y : y}
               </text>
             </g>
           );
@@ -61,15 +70,21 @@ export const HorizontalAxis = ({
 }) => {
   const strokeColor = "#888";
   const y = graphHeight;
-  const deviceWidth = window.innerWidth;
   const tickCount = graphType === "year" ? 10 : 20;
   const [x1, x2] = scale.range();
   const clickYearHandler = (e) => {
-    setData(e.currentTarget.dataset.id);
+    if (graphType === "year") {
+      setData(e.currentTarget.dataset.id);
+    } else {
+      setData({
+        id: e.currentTarget.dataset.id,
+        area: e.currentTarget.dataset.name,
+      });
+    }
   };
   return (
     <g>
-      <line x1={x1} y1={y} x2={x2 + 25} y2={y} stroke={strokeColor}></line>
+      <line x1={x1} y1={y} x2={x2 + 40} y2={y} stroke={strokeColor}></line>
       <g>
         <g transform={`translate(${graphWidth / 2}, ${y + 40})`}>
           <text
@@ -101,6 +116,9 @@ export const HorizontalAxis = ({
                 fontSize={graphType !== "area" ? "12" : "5"}
                 data-id={
                   graphType !== "area" || i === 20 ? x : optionData[i].id
+                }
+                data-name={
+                  graphType === "area" && i < 20 ? optionData[i].area : ""
                 }
                 onClick={clickYearHandler}
               >
