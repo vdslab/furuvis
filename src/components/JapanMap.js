@@ -71,8 +71,8 @@ const JapanMap = ({ currentArea }) => {
   if (!japanPath.length) {
     return (
       <div className="column is-5">
-        <div className="box">
-          <p>loading</p>
+        <div className="box" style={{ height: "500px" }}>
+          <p>日本地図を描画中...</p>
         </div>
       </div>
     );

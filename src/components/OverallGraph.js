@@ -5,7 +5,17 @@ import Legend from "./Legend";
 const OverallGraph = ({ setYear, colorScale }) => {
   const [population, setPopulation] = useState([]);
   const [price, setPrice] = useState([]);
+  const margin = {
+    top: 10,
+    bottom: 50,
+    left: 100,
+    right: 200,
+  };
 
+  const contentWidth = 400;
+  const contentHeight = 250;
+  const svgWidth = margin.right + margin.left + contentWidth;
+  const svgHeight = margin.top + margin.bottom + contentHeight;
   useEffect(() => {
     (async () => {
       const res_popu = await fetch("./data/population.json");
@@ -18,19 +28,13 @@ const OverallGraph = ({ setYear, colorScale }) => {
     })();
   }, []);
   if (price.length === 0) {
-    return <div className="column is-5">Loading...</div>;
+    return (
+      <div className="box" style={{ width: svgWidth, height: "200px" }}>
+        読み込み中...
+      </div>
+    );
   }
-  const margin = {
-    top: 10,
-    bottom: 50,
-    left: 100,
-    right: 200,
-  };
 
-  const contentWidth = 400;
-  const contentHeight = 250;
-  const svgWidth = margin.right + margin.left + contentWidth;
-  const svgHeight = margin.top + margin.bottom + contentHeight;
   const xScaleYear = d3
     .scaleLinear()
     .domain(d3.extent(price, (item) => item["year"]))
@@ -46,7 +50,10 @@ const OverallGraph = ({ setYear, colorScale }) => {
     .range([contentHeight, 0]);
 
   return (
-    <div className="box" style={{ marginRight: "20px", marginBottom: "5px" }}>
+    <div
+      className="box"
+      style={{ marginRight: "20px", marginBottom: "5px", paddingBottom: "0" }}
+    >
       <div>
         <svg
           viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}

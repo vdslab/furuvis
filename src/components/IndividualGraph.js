@@ -11,11 +11,11 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
     left: 60,
     right: 200,
   };
-
   const contentWidth = 500;
   const contentHeight = 250;
   const svgWidth = margin.right + margin.left + contentWidth;
   const svgHeight = margin.top + margin.bottom + contentHeight;
+
   useEffect(() => {
     (async () => {
       const data = {};
@@ -31,10 +31,18 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
     })();
   }, []);
   if (detailData.length === 0) {
-    return <div></div>;
+    return (
+      <div className="box" style={{ width: svgWidth, height: "100px" }}>
+        読み込み中...
+      </div>
+    );
   }
   if (!year) {
-    return <div className="column is-5">Loading...</div>;
+    return (
+      <div className="box" style={{ width: svgWidth }}>
+        上のグラフから年を選択してください。
+      </div>
+    );
   }
   const data = detailData[year].map((item) => {
     return {
@@ -62,13 +70,22 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
     .scaleLinear()
     .domain([0, d3.extent(detailData[year], (item) => item["population"])[1]])
     .range([contentHeight, 0]);
+
   if (Object.keys(detailData).length) {
     return (
       <div
         className="box"
-        style={{ marginRight: "20px", marginTop: "5px", paddingLeft: "5px" }}
+        style={{
+          marginRight: "20px",
+          marginTop: "5px",
+          paddingLeft: "5px",
+          paddingTop: "5px",
+        }}
       >
         <div>
+          <p style={{ paddingLeft: "20px", paddingBottom: "10px" }}>
+            {year !== null ? year : ""}年
+          </p>
           <svg
             viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
             width={svgWidth}
