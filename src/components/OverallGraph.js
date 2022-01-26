@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
 import { VerricalAxis, HorizontalAxis } from "./Axis";
+import Legend from "./Legend";
 const OverallGraph = ({ setYear, colorScale }) => {
   const [population, setPopulation] = useState([]);
   const [price, setPrice] = useState([]);
@@ -20,7 +21,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
     return <div className="column is-5">Loading...</div>;
   }
   const margin = {
-    top: 0,
+    top: 10,
     bottom: 50,
     left: 80,
     right: 200,
@@ -45,7 +46,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
     .range([contentHeight, 0]);
 
   return (
-    <div className="box">
+    <div className="box" style={{ marginRight: "20px" }}>
       <div>
         <svg
           viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
@@ -75,6 +76,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
             location="right"
             label="人口"
           />
+          <Legend scale={colorScale} graphWidth={contentWidth} />
           <g>
             {price.map((item, i) => {
               const x = xScaleYear(item["year"]) + 20;

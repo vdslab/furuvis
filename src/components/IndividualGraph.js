@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
 import { VerricalAxis, HorizontalAxis } from "./Axis";
+import Legend from "./Legend";
 
 const IndividualGraph = ({ setArea, year, colorScale }) => {
   const [detailData, setDetailData] = useState([]);
@@ -70,7 +71,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
     .range([contentHeight, 0]);
   if (Object.keys(detailData).length) {
     return (
-      <div className="box">
+      <div className="box" style={{ marginRight: "20px" }}>
         <div>
           <svg
             viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
@@ -84,6 +85,13 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
               location="left"
               label="受け入れ金額"
             />
+            <VerricalAxis
+              scale={yScalePopulation}
+              graphWidth={contentWidth}
+              graphHeight={contentHeight}
+              location="right"
+              label="人口"
+            />
             <HorizontalAxis
               scale={xScaleAreaName}
               graphWidth={contentWidth}
@@ -93,6 +101,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
               graphType="area"
               optionData={data}
             />
+            <Legend scale={colorScale} graphWidth={contentWidth} />
             <g>
               {detailData[year].map((item, i) => {
                 const x = xScaleAreaName(i + 1) + 20;

@@ -82,11 +82,8 @@ const JapanMap = ({ currentArea }) => {
   }
 
   return (
-    <div
-      className="column is-5"
-      style={{ marginLeft: "20px", marginRight: "10px" }}
-    >
-      <div className="box">
+    <div className="column is-5">
+      <div className="box" style={{ marginLeft: "20px", marginRight: "10px" }}>
         {/* <svg viewBox="-50 0 770 325" width="500" height="550"> */}
         <ZoomableSVG width={svgWidth} height={svgHeight}>
           <g>

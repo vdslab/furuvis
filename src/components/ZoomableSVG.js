@@ -18,7 +18,7 @@ function ZoomableSVG({ children, width, height }) {
   }, []);
 
   return (
-    <svg ref={svgRef} viewBox="-50 0 770 325" width="550" height="600">
+    <svg ref={svgRef} viewBox="-50 0 770 325" width="500" height="600">
       <g transform={`translate(${x}, ${y})scale(${k})`}>{children}</g>
     </svg>
   );

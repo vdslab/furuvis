@@ -20,9 +20,13 @@ export const VerricalAxis = ({
         strokeWidth="2"
       ></line>
       <g>
-        <g transform={`translate(-60, ${graphHeight / 2}) rotate(-90)`}>
+        <g
+          transform={`translate(${
+            location === "left" ? -60 : graphWidth + 100
+          }, ${graphHeight / 2}) rotate(${location === "left" ? -90 : 90})`}
+        >
           <text
-            x={x}
+            x="0"
             y="0"
             textAnchor="end"
             dominantBaseline="central"

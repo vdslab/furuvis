@@ -10,7 +10,7 @@ const Main = () => {
   return (
     <div className="columns is-multiline" style={{ marginTop: "10px" }}>
       <JapanMap currentArea={area} />
-      <div className="column is-6">
+      <div className="column is-7">
         <OverallGraph setYear={setYear} colorScale={colorScale} />
         <IndividualGraph
           setArea={setArea}
