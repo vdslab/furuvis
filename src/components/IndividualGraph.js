@@ -6,7 +6,7 @@ import Legend from "./Legend";
 const IndividualGraph = ({ setArea, year, colorScale }) => {
   const [detailData, setDetailData] = useState([]);
   const margin = {
-    top: 0,
+    top: 20,
     bottom: 55,
     left: 60,
     right: 200,

@@ -5,6 +5,7 @@ import Legend from "./Legend";
 const OverallGraph = ({ setYear, colorScale }) => {
   const [population, setPopulation] = useState([]);
   const [price, setPrice] = useState([]);
+
   const margin = {
     top: 10,
     bottom: 50,
@@ -13,9 +14,10 @@ const OverallGraph = ({ setYear, colorScale }) => {
   };
 
   const contentWidth = 400;
-  const contentHeight = 250;
+  const contentHeight = 300;
   const svgWidth = margin.right + margin.left + contentWidth;
   const svgHeight = margin.top + margin.bottom + contentHeight;
+
   useEffect(() => {
     (async () => {
       const res_popu = await fetch("./data/population.json");
@@ -100,6 +102,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
                       `}
                   stroke={colorScale("受け入れ額")}
                   fill={colorScale("受け入れ額")}
+                  data-num={item.price}
                 />
               );
             })}
@@ -123,11 +126,13 @@ const OverallGraph = ({ setYear, colorScale }) => {
                     ></line>
                   )}
                   <circle
+                    title={String(item.population)}
                     key={item.id}
                     cx={xScaleYear(item["year"]) + 20}
                     cy={yScalePopulation(item.population)}
                     r="4"
                     fill={colorScale("人口")}
+                    data-num={item.population}
                   ></circle>
                 </g>
               );

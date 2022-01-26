@@ -121,8 +121,7 @@ export const HorizontalAxis = ({
     }
   };
   const mouseOverHandler = (e) => {
-    console.log(e.currentTarget.dataset.id);
-    setHoveredYear(e.currentTarget.dataset.id);
+    setHoveredYear(Number(e.currentTarget.dataset.id));
   };
   return (
     <g>
@@ -145,7 +144,8 @@ export const HorizontalAxis = ({
         </g>
 
         {scale.ticks(tickCount).map((x, i) => {
-          const id = graphType !== "area" || i === 20 ? x : optionData[i].id;
+          const id = graphType !== "area" ? x : optionData[i].id;
+
           return (
             <g
               key={i}
@@ -156,23 +156,20 @@ export const HorizontalAxis = ({
               <text
                 x="0"
                 y="0"
-                textAnchor="middle"
                 dominantBaseline="central"
                 fontSize={graphType !== "area" ? "12" : "10"}
                 transform={graphType === "area" ? "rotate(45)" : ""}
                 textAnchor={graphType === "area" ? "start" : "middle"}
                 style={{
                   cursor: "pointer",
-                  textDecoration: id === hoveredYear ? "underline" : "none",
+                  textDecorationLine: id == hoveredYear ? "overline" : "none",
                 }}
                 data-id={id}
-                data-name={
-                  graphType === "area" && i < 20 ? optionData[i].area : ""
-                }
+                data-name={graphType === "area" ? optionData[i].area : ""}
                 onClick={clickYearHandler}
                 onMouseOver={mouseOverHandler}
               >
-                {graphType !== "area" || i === 20 ? x : optionData[i].area}
+                {graphType !== "area" ? x : optionData[i].area}
               </text>
             </g>
           );
