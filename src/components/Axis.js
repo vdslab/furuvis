@@ -1,14 +1,26 @@
+import { useState } from "react";
 export const VerricalAxis = ({
   scale,
   graphWidth,
   graphHeight,
   location,
+  graphName,
   label,
 }) => {
   const strokeColor = "#888";
   const x = location === "left" ? 0 : graphWidth + 40;
   const [y1, y2] = scale.range();
   const deviceWidth = window.innerWidth;
+  let labelLen = 0;
+  if (location === "left") {
+    if (graphName === "overall") {
+      labelLen = -80;
+    } else {
+      labelLen = -50;
+    }
+  } else {
+    labelLen = graphWidth + 100;
+  }
   return (
     <g>
       <line
@@ -21,21 +33,33 @@ export const VerricalAxis = ({
       ></line>
       <g>
         <g
-          transform={`translate(${
-            location === "left" ? -60 : graphWidth + 100
-          }, ${graphHeight / 2}) rotate(${location === "left" ? -90 : 90})`}
+          transform={`translate(${labelLen}, ${graphHeight / 2}) rotate(${
+            location === "left" ? -90 : 90
+          })`}
         >
           <text
             x="0"
             y="0"
-            textAnchor="end"
             dominantBaseline="central"
             fontSize={deviceWidth > 768 ? "15" : "12"}
+            textAnchor="middle"
           >
             {label}
           </text>
         </g>
-
+        <g>
+          <text
+            transform={`translate(${
+              graphName === "individual" ? -40 : -60
+            },20)`}
+            x="0"
+            y="0"
+            textAnchor="start"
+            fontSize="10"
+          >
+            万
+          </text>
+        </g>
         {scale.ticks().map((y, i) => {
           return (
             <g key={i} transform={`translate(${x}, ${scale(y)})`}>
@@ -76,6 +100,7 @@ export const HorizontalAxis = ({
   const y = graphHeight;
   const tickCount = graphType === "year" ? 10 : 20;
   const [x1, x2] = scale.range();
+  const [hover, setHover] = useState(false);
   const clickYearHandler = (e) => {
     if (graphType === "year") {
       setData(e.currentTarget.dataset.id);
@@ -86,11 +111,16 @@ export const HorizontalAxis = ({
       });
     }
   };
+  const mouseOverHandler = (e) => {};
   return (
     <g>
       <line x1={x1} y1={y} x2={x2 + 40} y2={y} stroke={strokeColor}></line>
       <g>
-        <g transform={`translate(${graphWidth / 2}, ${y + 40})`}>
+        <g
+          transform={`translate(${graphWidth / 2}, ${
+            y + (graphType === "area" ? 48 : 40)
+          })`}
+        >
           <text
             x="0"
             y="0"
@@ -104,20 +134,21 @@ export const HorizontalAxis = ({
 
         {scale.ticks(tickCount).map((x, i) => {
           return (
-            <g key={i} transform={`translate(${scale(x) + 20}, 0)`}>
-              {/* <line
-                x1="0"
-                y1={graphHeight}
-                x2="0"
-                y2={graphHeight - 10}
-                stroke={strokeColor}
-              ></line> */}
+            <g
+              key={i}
+              transform={`translate(${scale(x) + 20}, ${
+                y + (graphType === "area" ? 7 : 15)
+              })`}
+            >
               <text
                 x="0"
-                y={y + 15}
+                y="0"
                 textAnchor="middle"
                 dominantBaseline="central"
-                fontSize={graphType !== "area" ? "12" : "5"}
+                fontSize={graphType !== "area" ? "12" : "10"}
+                transform={graphType === "area" ? "rotate(45)" : ""}
+                textAnchor={graphType === "area" ? "start" : "middle"}
+                style={{ cursor: "pointer" }}
                 data-id={
                   graphType !== "area" || i === 20 ? x : optionData[i].id
                 }

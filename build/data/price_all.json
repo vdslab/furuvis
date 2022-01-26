@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "price": 3347895,
+        "year": 2008
+    },
+    {
+        "id": 2,
+        "price": 2794451,
+        "year": 2009
+    },
+    {
+        "id": 3,
+        "price": 4868921,
+        "year": 2010
+    },
+    {
+        "id": 4,
+        "price": 5202551,
+        "year": 2011
+    },
+    {
+        "id": 5,
+        "price": 3179782,
+        "year": 2012
+    },
+    {
+        "id": 6,
+        "price": 4117077,
+        "year": 2013
+    },
+    {
+        "id": 7,
+        "price": 11791765,
+        "year": 2014
+    },
+    {
+        "id": 8,
+        "price": 44482063,
+        "year": 2015
+    },
+    {
+        "id": 9,
+        "price": 71588687,
+        "year": 2016
+    },
+    {
+        "id": 10,
+        "price": 91544781,
+        "year": 2017
+    },
+    {
+        "id": 11,
+        "price": 194992019,
+        "year": 2018
+    },
+    {
+        "id": 12,
+        "price": 106709508,
+        "year": 2019
+    },
+    {
+        "id": 13,
+        "price": 130414232,
+        "year": 2020
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    },
+    {
+        "id": null,
+        "price": null,
+        "year": null
+    }
+]

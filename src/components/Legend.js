@@ -1,6 +1,6 @@
 function Legend({ scale, graphWidth }) {
   return (
-    <g transform="translate(150,0)">
+    <g transform="translate(200,0)">
       {scale.domain().map((item, i) => {
         return (
           <g

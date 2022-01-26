@@ -7,9 +7,9 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
   const [detailData, setDetailData] = useState([]);
   const margin = {
     top: 0,
-    bottom: 50,
-    left: 80,
-    right: 150,
+    bottom: 55,
+    left: 60,
+    right: 200,
   };
 
   const contentWidth = 500;
@@ -24,7 +24,6 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
         const resYear = i <= 30 ? "H" + i : "R" + (i - 30);
         const res = await fetch(`./data/${resYear}.json`);
         const datum = await res.json();
-        console.log(datum);
         data[ADYear] = datum;
         ADYear++;
       }
@@ -32,23 +31,17 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
     })();
   }, []);
   if (detailData.length === 0) {
-    console.log("データの取得中");
     return <div></div>;
   }
   if (!year) {
-    console.log("年度が選択されていません");
     return <div className="column is-5">Loading...</div>;
   }
-  console.log("data detail");
-  console.log(detailData);
   const data = detailData[year].map((item) => {
     return {
       id: item.id,
       area: item.area,
     };
   });
-  console.log("ojb");
-  console.log(data);
 
   const xScaleAreaName = d3
     .scaleLinear()
@@ -71,7 +64,10 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
     .range([contentHeight, 0]);
   if (Object.keys(detailData).length) {
     return (
-      <div className="box" style={{ marginRight: "20px" }}>
+      <div
+        className="box"
+        style={{ marginRight: "20px", marginTop: "5px", paddingLeft: "5px" }}
+      >
         <div>
           <svg
             viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
@@ -82,6 +78,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
               scale={yScalePrice}
               graphWidth={contentWidth}
               graphHeight={contentHeight}
+              graphName={`individual`}
               location="left"
               label="受け入れ金額"
             />
@@ -89,6 +86,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
               scale={yScalePopulation}
               graphWidth={contentWidth}
               graphHeight={contentHeight}
+              graphName={`individual`}
               location="right"
               label="人口"
             />
@@ -114,7 +112,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
                    H ${x + 10} V ${contentHeight} H ${x - 10} 
                   V ${y}
                   `}
-                    fill={colorScale("price")}
+                    fill={colorScale("受け入れ額")}
                   />
                 );
               })}
@@ -131,7 +129,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
                         y1={yScalePopulation(preData.population)}
                         x2={xScaleAreaName(i + 1) + 20}
                         y2={yScalePopulation(item.population)}
-                        stroke={colorScale("population")}
+                        stroke={colorScale("人口")}
                         strokeWidth="3"
                       ></line>
                       <circle
@@ -139,7 +137,7 @@ const IndividualGraph = ({ setArea, year, colorScale }) => {
                         cx={xScaleAreaName(i + 1) + 20}
                         cy={yScalePopulation(item.population)}
                         r="4"
-                        fill={colorScale("population")}
+                        fill={colorScale("人口")}
                       ></circle>
                     </g>
                   );

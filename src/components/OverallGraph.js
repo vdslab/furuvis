@@ -8,11 +8,11 @@ const OverallGraph = ({ setYear, colorScale }) => {
 
   useEffect(() => {
     (async () => {
-      const res_popu = await fetch("./data/population_test.json");
+      const res_popu = await fetch("./data/population.json");
       const data_popu = await res_popu.json();
       setPopulation(data_popu);
 
-      const res_price = await fetch("./data/price_test.json");
+      const res_price = await fetch("./data/price_all.json");
       const data_price = await res_price.json();
       setPrice(data_price);
     })();
@@ -23,7 +23,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
   const margin = {
     top: 10,
     bottom: 50,
-    left: 80,
+    left: 100,
     right: 200,
   };
 
@@ -46,7 +46,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
     .range([contentHeight, 0]);
 
   return (
-    <div className="box" style={{ marginRight: "20px" }}>
+    <div className="box" style={{ marginRight: "20px", marginBottom: "5px" }}>
       <div>
         <svg
           viewBox={`${-margin.left} ${-margin.top} ${svgWidth} ${svgHeight}`}
@@ -66,6 +66,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
             scale={yScalePrice}
             graphWidth={contentWidth}
             graphHeight={contentHeight}
+            graphName={`overall`}
             location="left"
             label="受け入れ額"
           />
@@ -73,6 +74,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
             scale={yScalePopulation}
             graphWidth={contentWidth}
             graphHeight={contentHeight}
+            graphName={`overall`}
             location="right"
             label="人口"
           />
@@ -89,8 +91,8 @@ const OverallGraph = ({ setYear, colorScale }) => {
                        H ${x + 10} V ${contentHeight} H ${x - 10} 
                       V ${y}
                       `}
-                  stroke={colorScale("price")}
-                  fill={colorScale("price")}
+                  stroke={colorScale("受け入れ額")}
+                  fill={colorScale("受け入れ額")}
                 />
               );
             })}
@@ -109,7 +111,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
                       y1={yScalePopulation(preData.population)}
                       x2={xScaleYear(item["year"]) + 20}
                       y2={yScalePopulation(item.population)}
-                      stroke={colorScale("population")}
+                      stroke={colorScale("人口")}
                       strokeWidth="3"
                     ></line>
                   )}
@@ -118,7 +120,7 @@ const OverallGraph = ({ setYear, colorScale }) => {
                     cx={xScaleYear(item["year"]) + 20}
                     cy={yScalePopulation(item.population)}
                     r="4"
-                    fill={colorScale("population")}
+                    fill={colorScale("人口")}
                   ></circle>
                 </g>
               );
