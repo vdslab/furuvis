@@ -92,7 +92,6 @@ const OverallGraph = ({ setYear, colorScale }) => {
             {price.map((item, i) => {
               const x = xScaleYear(item["year"]) + 20;
               const y = yScalePrice(item["price"] / 10000);
-
               return (
                 <path
                   key={item.id}
@@ -102,7 +101,6 @@ const OverallGraph = ({ setYear, colorScale }) => {
                       `}
                   stroke={colorScale("受け入れ額")}
                   fill={colorScale("受け入れ額")}
-                  data-num={item.price}
                 />
               );
             })}
@@ -111,7 +109,6 @@ const OverallGraph = ({ setYear, colorScale }) => {
           <g>
             {population.map((item, i) => {
               const preData = i > 0 ? population[i - 1] : null;
-
               return (
                 <g key={item.id * 100}>
                   {i > 0 && (
@@ -126,13 +123,11 @@ const OverallGraph = ({ setYear, colorScale }) => {
                     ></line>
                   )}
                   <circle
-                    title={String(item.population)}
                     key={item.id}
                     cx={xScaleYear(item["year"]) + 20}
                     cy={yScalePopulation(item.population)}
                     r="4"
                     fill={colorScale("人口")}
-                    data-num={item.population}
                   ></circle>
                 </g>
               );

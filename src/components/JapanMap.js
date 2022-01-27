@@ -27,7 +27,6 @@ const JapanMap = ({ currentArea }) => {
   useEffect(() => {
     (async () => {
       const res = await fetch(`./data/japan_simplify.topojson`);
-
       const data = await res.json();
       const features = await topojson.feature(
         data,
@@ -47,7 +46,6 @@ const JapanMap = ({ currentArea }) => {
       setJson(features);
     })();
   }, []);
-
   useEffect(() => {
     if (json) {
       const target = JSON.parse(JSON.stringify(json));
@@ -64,7 +62,7 @@ const JapanMap = ({ currentArea }) => {
       });
       const centerPoint = projection(d3.geoCentroid(target));
       setTargetPoint(centerPoint);
-      setArea(currentArea);
+      setArea(strArea);
     }
   }, [currentArea]);
 
@@ -77,7 +75,6 @@ const JapanMap = ({ currentArea }) => {
       </div>
     );
   }
-
   return (
     <div className="column is-5">
       <div className="box" style={{ marginLeft: "20px", marginRight: "0" }}>
@@ -91,7 +88,7 @@ const JapanMap = ({ currentArea }) => {
                 strokeWidth="0.8"
                 strokeOpacity="0.5"
                 style={{
-                  fill: area == item.areaCode ? "red" : "white",
+                  fill: "white",
                 }}
               />
             ))}
